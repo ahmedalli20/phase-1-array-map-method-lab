@@ -8,9 +8,18 @@ const tutorials = [
   'Immutable State and Pure Functions',
   'what is the difference between == and ===?',
   'what is the difference between event capturing and bubbling?',
-  'what is JSONP?'
+  'what is JSONP?' 
 ];
 
 const titleCased = () => {
-  return tutorials
+  
+  const newTutorials = tutorials.map(letter => {
+     const TutorialsWords = letter.split(' ');
+    const wordsCapitalized = TutorialsWords.map(word => word[0].toUpperCase() + word.slice(1, word.length));
+    const finalTutorials = wordsCapitalized.join(' ');
+  return finalTutorials;
+});
+return newTutorials;
 }
+
+titleCased()
